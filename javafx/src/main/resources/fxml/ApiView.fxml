@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="670.0" maxWidth="880.0"
+            minHeight="670.0" minWidth="880.0" prefHeight="670.0" prefWidth="880.0"
+            xmlns="http://javafx.com/javafx/10.0.1"
+            fx:controller="de.hhn.it.pp.javafx.controllers.ApiController">
+    <children>
+        <SplitPane dividerPositions="0.2" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                   AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="670.0" prefWidth="100.0">
+                    <children>
+                        <VBox prefHeight="670.0" prefWidth="100.0"
+                              AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                              AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                            <children>
+                                <Label text="Functions">
+                                    <font>
+                                        <Font size="24.0"/>
+                                    </font>
+                                </Label>
+                                <ListView fx:id="functionListView" onMouseClicked="#handleMouseClick"
+                                          prefHeight="636.0" prefWidth="100.0"/>
+                            </children>
+                        </VBox>
+                    </children>
+                </AnchorPane>
+                <AnchorPane fx:id="functionAnchorPane"/>
+            </items>
+        </SplitPane>
+    </children>
+</AnchorPane>

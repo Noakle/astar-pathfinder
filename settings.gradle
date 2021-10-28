@@ -1,0 +1,4 @@
+rootProject.name = 'gaming-pp-20-ss'
+
+
+include ':components', ':javafx'

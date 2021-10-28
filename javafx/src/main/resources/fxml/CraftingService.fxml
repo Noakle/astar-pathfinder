@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="680.0" maxWidth="1080.0" minHeight="555.0" minWidth="894.0"
+            prefHeight="640.0" prefWidth="894.0" style="-fx-background-color: CCFFCC;"
+            xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="de.hhn.it.pp.javafx.controllers.CraftingServiceController">
+    <children>
+        <AnchorPane layoutX="15.0" layoutY="14.0" prefHeight="60.0" prefWidth="325.0"
+                    style="-fx-border-color: black; -fx-background-color: #DEB887;">
+            <children>
+                <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="14.0" layoutY="14.0"
+                           pickOnBounds="true" preserveRatio="true" />
+                <ComboBox fx:id="itemComboBox" layoutX="63.0" layoutY="18.0"
+                          onAction="#onChooseComboBox" prefHeight="25.0" prefWidth="175.0"
+                          promptText="Choose Item" />
+                <Button fx:id="addBtn" layoutX="256.0" layoutY="15.0" mnemonicParsing="false"
+                        onAction="#onAdd" prefHeight="30.0" prefWidth="55.0" text="Add" />
+            </children>
+        </AnchorPane>
+        <AnchorPane layoutX="480.0" layoutY="14.0" prefHeight="612.0" prefWidth="400.0"
+                    style="-fx-border-color: black; -fx-background-color: #DEB887;">
+            <children>
+                <ImageView fitHeight="64.0" fitWidth="64.0" layoutX="168.0" layoutY="65.0"
+                           pickOnBounds="true" preserveRatio="true" />
+                <ListView fx:id="providedItemsListView" layoutX="204.0" layoutY="169.0"
+                          onMouseClicked="#onMouseClickedTableListView" prefHeight="250.0"
+                          prefWidth="190.0" />
+                <ListView fx:id="neededItemsListView" layoutX="8.0" layoutY="169.0"
+                          onMouseClicked="#onMouseClickedTableListView" prefHeight="250.0"
+                          prefWidth="190.0" />
+                <ComboBox fx:id="patternComboBox" layoutX="63.0" layoutY="14.0"
+                          onAction="#onChooseComboBox" prefHeight="25.0" prefWidth="275.0"
+                          promptText="Choose Crafting Pattern" />
+                <Button fx:id="craftBtn" disable="true" layoutX="22.0" layoutY="558.0"
+                        mnemonicParsing="false" onAction="#onCraft" prefHeight="40.0"
+                        prefWidth="360.0" text="Craft" />
+                <Label fx:id="isCraftingExecutableLbl" alignment="CENTER" layoutX="21.0"
+                       layoutY="486.0" prefHeight="30.0" prefWidth="360.0"
+                       text="No Crafting Pattern chosen" textAlignment="CENTER" textFill="RED">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </Label>
+            <Label layoutX="8.0" layoutY="144.0" prefHeight="8.0" prefWidth="130.0"
+                   text="Needed items: " textFill="RED">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="204.0" layoutY="144.0" prefHeight="0.0" prefWidth="130.0"
+                   text="Provided items: " textFill="GREEN">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="craftingTimeLbl" alignment="CENTER" layoutX="21.0" layoutY="419.0"
+                   prefHeight="25.0" prefWidth="360.0" text="Crafting time: XX seconds"
+                   textAlignment="CENTER" textFill="BLUE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            </children>
+        </AnchorPane>
+        <ProgressBar fx:id="progressBar" layoutX="15.0" layoutY="586.0" prefHeight="40.0"
+                     prefWidth="450.0" progress="0.0" />
+        <Button fx:id="removeBtn" layoutX="401.0" layoutY="85.0" mnemonicParsing="false"
+                onAction="#onRemove" prefHeight="30.0" prefWidth="64.0" text="Remove" />
+      <TableView fx:id="itemTableView" layoutX="15.0" layoutY="121.0"
+                 onMouseClicked="#onMouseClickedTableListView" prefHeight="450.0"
+                 prefWidth="450.0">
+          <placeholder>
+              <Label text="No items in inventory" />
+          </placeholder>
+        <columns>
+          <TableColumn editable="false" maxWidth="64.0" minWidth="64.0" prefWidth="64.0"
+                       resizable="false" text="Icon" />
+          <TableColumn fx:id="nameCol" editable="false" maxWidth="385.0" minWidth="254.0"
+                       prefWidth="384.0" resizable="false" text="Name" />
+        </columns>
+      </TableView>
+      <Label layoutX="15.0" layoutY="87.0" prefHeight="0.0" prefWidth="90.0" text="Inventory"
+             textFill="#29c329">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+    </children>
+</AnchorPane>

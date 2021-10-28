@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="666.0" maxWidth="700.0"
+            minHeight="666.0" minWidth="700.0" prefHeight="666.0" prefWidth="700.0"
+            xmlns="http://javafx.com/javafx/10.0.1"
+            fx:controller="de.hhn.it.pp.javafx.controllers.apiviewscontrollers.ItemViewController">
+    <children>
+        <HBox AnchorPane.topAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" prefHeight="50.0"
+              prefWidth="700">
+            <children>
+                <Label text="Items" prefHeight="50.0" prefWidth="700.0">
+                    <font>
+                        <Font size="30.0"/>
+                    </font>
+                </Label>
+            </children>
+        </HBox>
+        <VBox AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="50.0" AnchorPane.bottomAnchor="0.0" prefWidth="120.0"
+              prefHeight="650.0">
+            <children>
+                <HBox prefWidth="120.0" prefHeight="20.0">
+                    <children>
+                        <TextField fx:id="idSearch" promptText="search" onAction="#search" prefHeight="20"
+                                   prefWidth="80"/>
+                        <Button text="search" onAction="#search" prefHeight="20" prefWidth="40"/>
+                    </children>
+                </HBox>
+                <ListView fx:id="itemListView" onMouseClicked="#selectItem" prefWidth="120.0"
+                          prefHeight="592.0"/>
+            </children>
+        </VBox>
+        <AnchorPane AnchorPane.topAnchor="50.0" AnchorPane.leftAnchor="120.0" AnchorPane.bottomAnchor="0.0"
+                    AnchorPane.rightAnchor="0.0">
+            <children>
+                <TableView fx:id="itemTable" AnchorPane.topAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                           AnchorPane.rightAnchor="0.0" prefHeight="52.0" prefWidth="580.0"/>
+                <HBox AnchorPane.topAnchor="300.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                      prefHeight="50.0" prefWidth="580.0">
+                    <children>
+                        <TextField fx:id="newName" promptText="new name" prefHeight="50.0" prefWidth="145.0"/>
+                        <TextField fx:id="newWeight" promptText="new weight" prefHeight="50.0"
+                                   prefWidth="145.0"/>
+                        <TextField fx:id="newVolume" promptText="new volume" prefHeight="50.0"
+                                   prefWidth="145.0"/>
+                        <TextField fx:id="newValue" promptText="new value" prefHeight="50.0"
+                                   prefWidth="145.0"/>
+                        <TextField fx:id="newInventoryId" promptText="new inventory id" prefHeight="50.0"
+                                   prefWidth="145.0"/>
+                    </children>
+                </HBox>
+                <HBox AnchorPane.topAnchor="350.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                      prefHeight="50.0" alignment="CENTER_RIGHT" spacing="83.3">
+                    <children>
+                        <Button text="add new Item" onAction="#addNewItem" prefHeight="50.0"
+                                prefWidth="150.0"/>
+                        <Button text="edit Item" onAction="#editItem" prefHeight="50.0" prefWidth="150.0"/>
+                        <Button text="remove Item" onAction="#removeItem" prefHeight="50.0"
+                                prefWidth="150.0"/>
+                    </children>
+                </HBox>
+                <HBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                      prefHeight="50.0" alignment="CENTER_RIGHT" spacing="83.3">
+                    <children>
+                        <TextField fx:id="inventoryIdInput" promptText="inventory id" onAction="#moveItem"
+                                   prefHeight="50.0" prefWidth="150.0"/>
+                        <Button text="move item" onAction="#moveItem" prefHeight="50.0" prefWidth="150.0"/>
+                    </children>
+                </HBox>
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>
